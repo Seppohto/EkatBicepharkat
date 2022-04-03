@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appServicePlanSku": {
+      "value": {
+        "name": "F1",
+        "tier": "Free"
+      }
+    },
+    "sqlDatabaseSku": {
+      "value": {
+        "name": "Standard",
+        "tier": "Standard"
+      }
+    },
+    "sqlServerAdministratorLogin": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/81f75b0a-41d1-4e98-b0a8-a906e16f8a7a/resourceGroups/learn-859ca949-e1c5-4516-9bce-9ca79709a941/providers/Microsoft.KeyVault/vaults/ollikv21"
+        },
+        "secretName": "sqlServerAdministratorLogin"
+      }
+    },
+    "sqlServerAdministratorPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/81f75b0a-41d1-4e98-b0a8-a906e16f8a7a/resourceGroups/learn-859ca949-e1c5-4516-9bce-9ca79709a941/providers/Microsoft.KeyVault/vaults/ollikv21"
+        },
+        "secretName": "sqlServerAdministratorPassword"
+      }
+    }
+  }
+}
+  
